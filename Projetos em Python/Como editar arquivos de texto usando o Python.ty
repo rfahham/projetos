@@ -1,0 +1,49 @@
+Hoje aprenderemos a como editar arquivos de texto usando Python!!
+Antes de tudo, crie um arquivo txt com o nome que preferir. Assim : texto.txt
+Primeiro vou lhes mostrar o programa completo depois eu explico ;D
+
+O Programa: 
+
+arquivo = open('texto.txt', 'w') #1
+
+#2 Começa o texto
+texto = """          
+
+Bem vindo a aula de Programação usando Python
+---------------------------------------------
+Hoje aprendi a editar arquivos usando Python
+            
+
+"""                     #Termina o texto
+
+print 'O arquivo foi editado com sucesso!!'
+arquivo.write(texto)   #3
+arquivo.close()        #4
+Na linha 1, criamos uma variável que contem o local do arquivo txt
+
+arquivo = open('texto.txt', 'w') #1
+Depois com ‘, w’  especificamos que tipo de edição vamos fazer. Sendo elas:
+
+w = Write -> Que escreve em cima de tudo que tiver no arquivo
+r = Read -> Que somente lê o arquivo
+etc – Existe varias outras, ou não…
+
+Na linha 2, criamos o texto que sera escrito no arquivo
+
+texto = """          #2 Começa o texto
+
+Bem vindo a aula de Programação usando Python
+---------------------------------------------
+Hoje aprendi a editar arquivos usando Python
+            
+
+"""                     #Termina o texto
+Na linha 3, Escrevemos o arquivo com o conteúdo da variável texto. Depois encerramos a conexão com o arquivo
+
+arq.write(texto)   #3
+arq.close()        #4
+Também podemos informar ao usuário que o arquivo foi editado:
+
+print 'O arquivo foi editado com sucesso!!'
+arq.write(texto)   #3
+arq.close()        #4

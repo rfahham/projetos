@@ -1,0 +1,62 @@
+tilte - Troca as primeiras letras da frase de minuscula para maiuscula
+
+	teste = 'e ai beleza?'
+	teste.title()
+
+		Saída: 'E ai beleza?'
+
+swapcase - Troca as letras minusculas da string para maiuscula
+upper - 
+
+	teste = 'e ai beleza?'
+	teste.title()
+
+		Saída: 'E AI BELEZA?'
+
+.rjust - Margem a Esquerda - Deixa um espaço a esquerda do parágrafo
+
+	print 'E ai beleza?'.rjust(15)
+
+		Saída: '	E ai beleza?'
+
+.ljust - Margem a Direita 
+
+	print 'E ai beleza?'.ljust(15)
+
+		Saída: 'E ai beleza?'
+
+Ué ? – Não aconteceu nada? – Aconteceu sim, a margem está sendo aplicada, é só pensar um pouquinho, tem toda lógia. rsrsrs
+
+split - separa a string pelos espaços
+
+	teste = 'oi tudo bem?'
+	teste.split()
+
+		Saída: ['oi', 'tudo', 'bem?']
+
+Também podemos escolher o ponto a ser separado
+
+teste = 'oi e tchau'
+	teste.split(e)
+
+		Saída: ['oi', 'tchau']
+
+lower - Troca as letras maiusculas para minusculas - Faz o contrario dos métodos swapcase e upper
+	
+	teste = 'E AI BELEZA?'
+	teste.lower()
+
+		Saída: 'e ai beleza?'
+
+lower().capitalize() - Altera a primeira letra da string de minuscula para maiuscula.
+
+	test = 'esse e o poder do python'
+	test.lower().capitalize()
+		
+		Saída: ’Esse e o poder do python’
+
+
+
+
+
+

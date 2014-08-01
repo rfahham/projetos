@@ -1,0 +1,105 @@
+É quase impossível usar o Linux por certo tempo e nunca ter precisado usar um editor de texto. Isso é causado devido a maioria das configurações de arquivos no Linux serem arquivos de texto puro, que, provavelmente, uma hora ou outra você terá que alterar manualmente.
+
+É quase impossível usar o Linux por certo tempo e nunca ter precisado usar um editor de texto. Isso é causado devido a maioria das configurações de arquivos no Linux serem arquivos de texto puro, que, provavelmente, uma hora ou outra você terá que alterar manualmente. 
+
+Se você estiver usando uma GUI, você pode rodar o gedit, que é bastante intuitivo para a edição de texto. Existe também um editor de texto simples, que você pode rodar no próprio Shell, chamado de nano. No entanto, a maioria dos usuários do shell Linux usarão os comandos do vi ou emacs para editar arquivos de texto. A vantagem dos mesmos sobre um editor gráfico é que você pode usá-lo em qualquer shell ou conexão baseada em caractere em uma rede (usando telnet ou ssh, por exemplo) – nenhuma GUI é necessária. Ainda: eles também contêm um bando de recursos interessantes. Vale a pena conhecer um pouco mais.
+
+De primeira, o editor vi é um pouco complicado para entender, mas, estudando um pouco, você nunca mais usará um mouse ou uma tecla de função – você pode editar e mover-se rapidamente dentro de arquivos somente usando o teclado. Acredite!
+
+
+Iniciando
+
+
+Frequentemente, você inicia o vi para abrir um arquivo particular. Por exemplo, para abrir um arquivo chamado /tmp/escolar, digite o comando:
+
+$ vi /tmp/escolar
+
+
+Se este for um arquivo novo, você verá algo parecido com isto:
+
+~
+~
+~
+~
+~
+“/tmp/escolar” [New File]
+
+
+A caixa no topo representa onde o curso se encontra. A linha final o mantém informado sobre o que está acontecendo com a sua edição (aqui no exemplo, abrimos um novo arquivo). Nesse meio tempo, há sinais de pontuação (~) como preenchedores de espaço, pois não há texto no arquivo ainda. Agora, a parte mais sinistra: não há dicas, menus ou ícones para lhe dizer o que fazer. Agora é você e o sistema! Você não pode começar simplesmente a digitar. Se fizer isso, o computador lhe emitirá beeps. 
+
+As primeiras coisas que você terá que saber são os diferentes modos de operação: comando e saída. O vi sempre começa no modo comando. Antes de você adicionar ou mudar um texto no arquivo, você terá que informar um comando para “dizer” ao vi o que pretende fazer. Para ficar no modo input, digite um comando input. Para começar, digite ao menos um dos comandos abaixo:
+a: comando “adicionar”. Após ser digitado, você poderá inserir texto que começa a direita do cursor.
+i: comando “inserir”. Após ele, você poderá inserir texto que inicia a esquerda do cursor.
+
+Digite algumas palavras e pressione Enter. Repita isso algumas vezes até possuir algumas linhas de texto. Quando finalizar a digitação, pressione Esc para retornar para o modo de comando. Agora que você possui um arquivo com algum texto, tente mover em seu texto com as seguintes teclas ou letras:
+
+Setas de navegação – move o cursor para cima, para baixo, para esquerda ou para direita no arquivo, um caractere por vez. Para mover para esquerda e para direita, você também poderá usar o Backspace e a barra de espaço, respectivamente. Se você prefere manter os seus dedos no teclado, mova o cursor para a esquerda (h), direita (l), baixo (j) ou para cima (k). 
+w: move o cursor para o começo da próxima palavra.
+b: move o cursor para o começo da palavra anterior.
+0 (zero): move o cursor para o começo da linha atual.
+$: move o cursor para o final da linha atual.
+H: Move o cursor para a primeira linha na tela.
+M: Move o cursor para o primeiro caractere na linha do meio da tela.
+L: Move o cursor para a última linha da tela.
+
+Agora é necessário que você saiba deletar um texto. Eis alguns comandos vi para deletar texto:
+x: Deleta o caractere abaixo do cursor.
+X: Deleta o caractere diretamente acima do cursor.
+dw: Deleta o caractere atual até o fim da palavra atual.
+d$: Deleta o caractere atual até o fim da linha atual.
+d0: Deleta o caractere anterior até o começo da linha atual.
+
+Use os comandos a seguir para salvar e para sair do arquivo:
+ZZ: salva as mudanças atuais no arquivo e sai do vi.
+:w : salva o arquivo atual mas continua a edição.
+:wq : idem ao ZZ.
+:q :Sai do arquivo atual. Isso somente funciona se não tiver nenhuma mudança não-salva.
+:q! : sai do arquivo atual e não salva as mudanças que você fez no arquivo.
+
+Mais alguns comandos interessantes:
+Esc: O Esc o faz retornar para o modo de comando. Se pressionar Esc seguido pelo ZZ, você sai do modo comando, salva o arquivo e sai.
+u: pressione o “u” para voltar a mudança anterior que você fez. Funciona de forma similar aquela “setinha para trás” do Word, para desfazer a alteração que você realizou.
+Ctrl+R: este funciona de forma parecida com aquela “setinha para frente” do Word, onde você desfez a alteração, mas mudou de idéia. Este comando refaz o que tinha feito.
+Caps Lock: Tudo o que você digita no vi possui um significado diferente quando as letras estão maiúsculas. Tenha cuidado em acioná-la sem querer. Você não recebe um aviso que está com o Caps ativado – simplesmente, as coisas irão funcionar de forma estranha.
+:!: Você pode rodar um comando enquanto estiver no vi, usando :!, seguido pelo nome de comando. Por exemplo, digite :!date para ver a hora e data atual. Quando o comando completar, pressione Enter para voltar a editar o arquivo.
+Ctrl+G: Se você esquecer-se do que está editando, ao pressionar estas teclas mostra o nome do arquivo que você está editando e a linha atual que você se encontra no final da tela, além de outras informações.
+
+
+Movendo pelo arquivo
+
+
+Há diversos meios de mover-se pelo arquivo. Para estes exemplos, use arquivos grandes que você não poderá danificar. (Tente copiar /var/log/messages to/tmp e abra-o no vi). 
+Ctrl+F: página próxima, uma página por vez.
+Ctrl+B: página anterior, uma página por vez.
+Ctrl+D: página próxima, meia-página por vez.
+Ctrl+U: página anterior, meia página por vez.
+G: vá para a última linha do arquivo.
+1G: vá para a primeira linha do arquivo. (Você poderá usar qualquer número – o número usado será a linha correspondente no arquivo).
+
+
+Buscando por texto
+
+
+Para buscar a próxima ocorrência de texto no arquivo, use tanto a barra (/) ou o ponto de interrogação (?). 
+Exemplos:
+/linux: procura (sentido horário) pela palavra linux.
+?computadores: Procura (sentido anti-horário) pela palavra computadores.
+/Rubber.*Soul: procura (sentido horário) por uma linha que possua a palavra Rubber e, após isso, em algum lugar, a palavra Soul.
+?[bB]eatles: procura (sentido anti-horário) por beatles ou Beatles.
+
+O editor vi foi originalmente baseado no editor ex, que não lhe deixa trabalhar no modo de tela cheia. No entanto, lhe permite rodar comandos que o permitam encontrar e mudar texto em uma ou mais linhas por vez. Segue abaixo alguns exemplos de comandos ex para a busca e mudanças no texto:
+:g/Natal: procura pela palavra Natal e mostra cada ocorrência daquela linha no arquivo.
+:s/Natal/Natalino: substitui Natalino pela palavra Natal na linha atual.
+:g/Natal/s//Natalino: substitui a primeira ocorrência da palavra Natal em cada linha do arquivo com a palavra Natalino.
+:g/Natal/s//Natalino/g: substitui cada ocorrência da palavra Natal com a palavra Natalino no arquivo inteiro.
+:g/Natal/s//Natalino/gp: substitui cada ocorrência da palavra Natal pela palavra Natalino no arquivo inteiro, e depois mostra cada linha para que você veja as mudanças.
+
+
+Usando números com comandos
+
+
+Você pode preceder muitos comandos vi com números, para ter o comando repetido tantas vezes. Alguns exemplos:
+3dw: deleta as próximas três palavras.
+12j: Move 12 linhas para baixo.
+
+Observação: quando você chama o vi em muitos sistemas Linux, você está na verdade chamando o editor de texto vim, que roda no modo de compatibilidade do vi. Os mais aficionados em programação preferem usar o vim, porque mostra diferentes níveis de código em cores distintas, além de possuir outros recursos interessantes, como a capacidade de abrir um documento com o cursor no mesmo lugar que estava na última vez que você saiu.

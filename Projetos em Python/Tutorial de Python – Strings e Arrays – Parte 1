@@ -1,0 +1,144 @@
+Tutorial de Python – Strings e Arrays – Parte 1
+Publicado por Hugo Pires	 / Os comentários estão fechados
+Na semana passada falei-vos de variáveis numéricas, mas existem vários tipos de variáveis. Hoje falo-vos de strings e arrays que podem também ser armazenados em variáveis.
+
+
+As strings como já foi dito na introdução, não são mais que uma cadeia de caracteres, ou seja, um array de caracteres, por isso podemos falar já dos dois, uma vez que a sua utilização é semelhante em muitos aspectos.
+
+Um Array é uma estrutura de dados que contém uma série de elementos, ou seja, um array pode ter vários valores, e esses valores são acedidos por um índice que fica atribuído a esse valor. Normalmente o índice é linear e começa na posição 0, seguindo-se o 1,2,3, etc.
+
+Antes de mais vou introduzir uma nova função que se chama raw_input. Esta função é semelhante à função input que foi introduzida na semana passada, mas esta retorna sempre uma string, mesmo que os dados sejam numéricos. Tal como a função input a função raw_input têm um parâmetro que é opcional, e que é a uma mensagem a ser exibida ao utilizador. O retorno da função raw_input é uma string com o valor que introduzimos no teclado e pode ser atribuído a uma variável.
+
+Exemplo:
+
+a = raw_input("Introduza o valor de a:")
+print "Valor de a introduzido:", a
+Se introduzir-mos “abc”, o resultado é o seguinte:
+
+Introduza o valor de a: abc
+Valor de a introduzido: abc
+A função input também pode ser usada para ler strings, mas requer que as aspas sejam introduzidas.
+
+Definição de strings e arrays
+Para definirmos uma string e um array fazemos da seguinte forma:
+
+a = "sourceware"
+b = [1, 2, 3]
+Neste caso o valor de ‘a’ é a string “sourceware” e o valor de ‘b’ é um array com os valores 1, 2 e 3.
+Um aspecto importante a reter é que as strings tanto podem ser definidas usando as aspas duplas(“) ou aspas singulares(‘).
+
+Junção ou concatenação de strings ou arrays
+Para juntar ou concatenar uma string ou array usamos a operação de soma(+), tal como fazemos com números.
+
+Exemplo com strings:
+
+a = "py"
+b = a + "thon"
+print "Valor de a:", a
+print "Valor de b:", b
+Resultado:
+
+Valor de a: py
+Valor de b: python
+Exemplo com arrays:
+
+a = [1, 2]
+b = a + [3, 4]
+print "Valor de a:", a
+print "Valor de b:", b
+Resultado:
+
+Valor de a: [1, 2]
+Valor de b: [1, 2, 3, 4]
+Tamanho de uma string ou array
+Para obtermos o tamanho de uma string ou array usamos a função len, que vem de length, que em português quer dizer comprimento.
+
+a = "python"
+b = [1, 2, 3]
+print "Tamanho de a:", len(a)
+print "Tamanho de b:", len(b)
+Neste caso iria imprimir:
+
+Tamanho de a: 6
+Tamanho de b: 3
+Uma vez que a string ‘a’ tem 6 caracteres e o array ‘b’ tem 3 valores.
+
+Aceder a um caracter de uma string ou uma posição de um array
+Para aceder-mos a uma posição de um array ou string usamos os parênteses rectos da seguinte forma: variavel[posição]
+Se a posição for negativa, então a posição é a partir do final da string ou array.
+
+Exemplo:
+
+a = "python"
+b = [1, 2, 3]
+print "1º caracter de a:", a[0]
+print "2º caracter de a:", a[1]
+print "1º caracter de 'a' a contar do fim:", a[-1]
+print "2º caracter de 'a' a contar do fim:", a[-2]
+print "1º elemento de b:", b[0]
+print "2º elemento de b:", b[1]
+print "1º elemento de 'b' a contar do fim:", b[-1]
+print "2º elemento de 'b' a contar do fim:", b[-2]
+O resultado é o seguinte:
+
+1º caracter de a: p
+2º caracter de a: y
+1º caracter de 'a' a contar do fim: n
+2º caracter de 'a' a contar do fim: o
+1º elemento de b: 1
+2º elemento de b: 2
+1º elemento de 'b' a contar do fim: 3
+2º elemento de 'b' a contar do fim: 2
+Aceder a uma parte da string ou array
+Se queremos uma parte da string ou do array usamos a notação: variavel[inicio:fim]
+Em que o “inicio” e “fim” são a posição inicial e final respectivamente. Se o valor de “inicio” ou “fim” for negativo, então a posição é a contar do final da string ou array.
+
+Exemplo:
+
+a = "python"
+print "sub string a começar da 1ª até à 3ª posição:", a[0:2]
+print "sub string a começar da 1ª até à 3ª posição:", a[:2]
+print "sub string a começar da 2ª posição até à 4ª posição:", a[1:3]
+print "sub string a começar da 3ª posição até à última posição:", a[2:]
+print "sub string a começar da 1ª até à penúltima posição:", a[:-1]
+print "sub string a começar da 2ª até à ante-penúltima posição:", a[1:-2]
+E o resultado é o seguinte:
+
+sub string a começar da 1ª até à 3ª posição: py
+sub string a começar da 1ª até à 3ª posição: py
+sub string a começar da 2ª posição até à 4ª posição: yt
+sub string a começar da 3ª posição até à última posição: thon
+sub string a começar da 1ª até à penúltima posição: pytho
+sub string a começar da 2ª até à ante-penúltima posição: yth
+“Saltando” posições, e invertendo Strings e Arrays
+Se queremos “saltar” posições ou inverter a string ou array usamos a notação: variavel[inicio:fim:incremento]
+Nesta notação foi introduzido o incremento que por defeito é 1, ou seja, se o incremento é 1, o inicio é 0 e o fim é 3, então a posição vai sendo incrementada em 1 a começar no 0 e a acabar no 3, ou seja, 0,1 e 2, o três não conta porque é a posição final. Se o incremento for negativo, então o inicio passa a ser no final da sub string, ou seja, se o incremento é -1, o inicio é 3 e o fim é 0, o valor vai sendo decrementado em 1, com inicio em 3 e com fim em 0, ou seja, 3, 2 e 1.
+
+Exemplo:
+
+a = "python"
+print "string 'a' saltando 2 caracteres de cada vez:", a[::2]
+print "string 'a' invertida:", a[::-1]
+print "string 'a' invertida, saltando 2 caracteres de cada vez:", a[::-2]
+print "string 'a' da última posição à 2ª:", a[:1:-1]
+print "string 'a' da 4ª à 2ª posição:", a[4:1:-1]
+E o resultado:
+
+string 'a' saltando 2 caracteres de cada vez: pto
+string 'a' invertida: nohtyp
+string 'a' invertida, saltando 2 caracteres de cada vez: nhy
+string 'a' da última posição à 2ª: noht
+string 'a' da 4ª à 2ª posição: oht
+Matrizes e arrays multidimensionais
+Em python o conceito de arrays multidimensionais não existe, o que existe é uma alternativa, que são os arrays encadeados.
+Os arrays encadeados não são mais do que arrays dentro de arrays, ou seja, a cada elemento do array corresponde outro array.
+
+Exemplo de definição de uma matriz de 3 por 3:
+
+a = [ [1, 2, 3],
+      [4, 5, 6],
+      [7, 8, 9] ]
+Se tiverem dúvidas, ou acharem que algo não está bem, ou está mal explicado, comentem que eu tentarei explicar da melhor maneira.
+Boa programação. 
+
+Veja mais em Tutorial de Python – Strings e Arrays – Parte 1 | Sourceware Blog
